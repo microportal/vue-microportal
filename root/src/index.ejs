@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+<!--    <link href="https://cdn.jsdelivr.net/npm/quasar@1.12.3/dist/quasar.min.css" rel="stylesheet" type="text/css">-->
+
+    <title>Microportal</title>
+    <!--
+      Remove this if you only support browsers that support async/await.
+      This is needed by babel to share largeish helper code for compiling async/await in older
+      browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
+    <!--
+      This CSP allows any SSL-enabled host, but you should limit these directives further to increase your app's security.
+      Learn more about CSP policies at https://content-security-policy.com/#directive
+    -->
+<!--    <meta http-equiv="Content-Security-Policy"-->
+<!--          content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">-->
+    <meta name="importmap-type" content="systemjs-importmap"/>
+
+    <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
+
+      1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
+      2. UMD - https://github.com/umdjs/umd
+      3. Global variable
+
+      More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
+    -->
+    <script type="systemjs-importmap">
+    {
+      "imports": {
+        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.0/lib/system/single-spa.min.js",
+        "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
+        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.3.4/dist/vue-router.min.js",
+        "vuex": "https://cdn.jsdelivr.net/npm/vuex@3.4.0/dist/vuex.min.js",
+        "quasar": "https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/quasar.common.min.js",
+        "single-spa-vue": "https://cdn.jsdelivr.net/npm/single-spa-vue@1.8.2/lib/single-spa-vue.min.js"
+      }
+    }
+    </script>
+
+    <!-- Add your organization's prod import map URL to this script's src  -->
+    <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
+
+    <% if (isLocal) { %>
+        <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@microportal/root": "http://localhost:9000/main.js",
+        "@microportal/portal": "https://localhost:7070/js/app.js",
+        "@microportal/dashboard": "https://localhost:7071/js/app.js",
+        "@microportal/settings": "https://localhost:7072/js/app.js"
+      }
+    }
+        </script>
+    <% } %>
+
+    <!--
+      If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
+      Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
+    -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script> -->
+
+    <% if (isLocal) { %>
+        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.14.6/dist/import-map-overrides.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/system.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/amd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/named-exports.js"></script>
+    <% } else { %>
+        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.14.6/dist/import-map-overrides.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/system.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/amd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/named-exports.min.js"></script>
+    <% } %>
+</head>
+<body>
+<main></main>
+<script>
+    System.import('@microportal/root');
+</script>
+<import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+</html>
