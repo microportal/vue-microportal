@@ -18,11 +18,4 @@ registerApplication({
     activeWhen: '/settings',
 });
 
-// registerApplication({
-//     name: '@single-spa/welcome',
-//     app: () => System.import('https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js'),
-//     activeWhen: '/dashboard',
-// });
-
-// start({urlRerouteOnly: true,});
 start();

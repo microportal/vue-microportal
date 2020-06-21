@@ -1,9 +1,9 @@
 <template>
-    <h1>Settings</h1>
+    <h1>Settings Security!</h1>
 </template>
 
 <script>
     export default {
-        name: "Settings"
+        name: 'Security',
     }
 </script>

@@ -1,11 +1,9 @@
 <template>
-    <main>
-        <router-view/>
-    </main>
+    <h1>Settings About!</h1>
 </template>
 
 <script>
     export default {
-        name: 'App',
+        name: 'About',
     }
 </script>

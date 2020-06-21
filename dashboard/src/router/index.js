@@ -1,22 +1,25 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../components/Home';
-import Application from '../components/Application';
+import About from '../components/About';
 
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/',
-        name: 'portal-home',
+        path: '/dashboard',
         exact: true,
+        redirect: '/dashboard/home'
+    },
+    {
+        path: '/dashboard/home',
+        name: 'dashboard-home',
         component: Home,
     },
     {
-        path: '/:appId',
-        alias: '/:appId/*',
-        name: 'portal-application',
-        component: Application
+        path: '/dashboard/about',
+        name: 'dashboard-about',
+        component: About,
     },
 ];
 

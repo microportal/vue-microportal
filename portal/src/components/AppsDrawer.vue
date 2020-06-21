@@ -16,6 +16,9 @@
                 <q-item-section v-if="app.updated" side>
                     <q-badge color="accent">updated</q-badge>
                 </q-item-section>
+                <q-item-section v-if="app.new" side>
+                    <q-badge color="positive">new</q-badge>
+                </q-item-section>
             </q-item>
         </q-list>
     </q-drawer>

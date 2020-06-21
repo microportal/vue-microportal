@@ -11,6 +11,13 @@
                     <q-item-label>{{menu.name}}</q-item-label>
                     <q-item-label caption>{{menu.description}}</q-item-label>
                 </q-item-section>
+
+                <q-item-section v-if="menu.updated" side>
+                    <q-badge color="accent">updated</q-badge>
+                </q-item-section>
+                <q-item-section v-if="menu.new" side>
+                    <q-badge color="positive">new</q-badge>
+                </q-item-section>
             </q-item>
         </q-list>
     </q-drawer>
@@ -20,7 +27,7 @@
     import {mapState} from 'vuex';
 
     export default {
-        name: "MenuDrawer",
+        name: 'MenuDrawer',
         data() {
             return {
                 miniLeft: false,
@@ -33,7 +40,7 @@
                     return this.$store.state.leftDrawer
                 },
                 set(value) {
-                    this.$store.dispatch("changeLeftDrawer", value)
+                    this.$store.dispatch('changeLeftDrawer', value)
                 }
             },
         },

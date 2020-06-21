@@ -5,45 +5,47 @@ Vue.use(Vuex);
 
 const applications = [
     {
-        name: 'app1',
-        description: 'Application 1',
-        icon: 'fas fa-ambulance',
+        name: 'dashboard',
+        description: 'Dashboard',
+        icon: 'fas fa-tachometer-alt',
         updated: true,
         menu: [
             {
                 name: 'dashboard',
-                icon: 'dashboard',
-                to: '/view-doggos/dashboard',
+                icon: 'fas fa-home',
+                to: '/dashboard',
             },
             {
-                name: 'agenda',
-                icon: 'event',
-                to: '/view-doggos/about',
+                name: 'about',
+                icon: 'fas fa-info',
+                to: '/dashboard/about',
             },
         ]
     },
     {
-        name: 'app2',
-        description: 'Application 2',
-        icon: 'fas fa-ambulance',
-        updated: false,
+        name: 'settings',
+        description: 'Settings',
+        icon: 'fas fa-cogs',
+        "new": true,
         menu: [
             {
-                name: 'dashboard',
-                icon: 'dashboard',
-                to: '/app2/dashboard',
+                name: 'user',
+                icon: 'fas fa-users',
+                to: '/settings/users',
+                updated: true,
             },
             {
-                name: 'unidade',
-                icon: 'fas fa-hospital',
-                to: '/app2/unidade',
+                name: 'security',
+                icon: 'fas fa-shield-alt',
+                to: '/settings/security',
+                "new": true,
             },
             {
-                name: 'profissional',
-                icon: 'fas fa-stethoscope',
-                to: '/app2/profissional',
+                name: 'about',
+                icon: 'fas fa-info',
+                to: '/settings/about',
             },
-        ]
+        ],
     },
 ];
 
