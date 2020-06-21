@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@microportal/root": "/main.js",
+    "@microportal/portal": "/portal/js/app.js",
+    "@microportal/dashboard": "/dashboard/js/app.js",
+    "@microportal/settings": "/settings/js/app.js"
+  }
+}

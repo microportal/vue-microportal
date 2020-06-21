@@ -13,7 +13,7 @@ module.exports = {
             sockPort: 7070,
             sockHost: "localhost"
         },
-        externals: ["single-spa-vue", "vue", "vue-router", "vuex", "quasar", /^@microportal\/.+/],
+        externals: ["core-js", "single-spa-vue", "vue", "vue-router", "vuex", "quasar", /^@microportal\/.+/],
         plugins: [
             new Visualizer({
                 filename: '../statistics.html'

@@ -8,3 +8,14 @@ Execute the commands below inside all folders:
 $ npm i
 $ npm run serve
 ```
+
+# Docker
+
+If you prefer, use docker to start all the projects, run these commands:
+
+```bash
+$ docker-compose build
+$ docker-compose up -d
+```
+
+___
