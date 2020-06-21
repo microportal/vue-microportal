@@ -1,0 +1,41 @@
+<template>
+    <q-drawer v-model="leftDrawer" bordered side="left" :mini="miniLeft" v-if="currentApplication">
+        <q-list>
+            <q-item-label header>{{currentApplication.name}} Menu</q-item-label>
+
+            <q-item v-for="menu in currentApplication.menu" :key="menu.name" :to="menu.to" clickable v-ripple>
+                <q-item-section avatar>
+                    <q-icon :name="menu.icon"/>
+                </q-item-section>
+                <q-item-section>
+                    <q-item-label>{{menu.name}}</q-item-label>
+                    <q-item-label caption>{{menu.description}}</q-item-label>
+                </q-item-section>
+            </q-item>
+        </q-list>
+    </q-drawer>
+</template>
+
+<script>
+    import {mapState} from 'vuex';
+
+    export default {
+        name: "MenuDrawer",
+        data() {
+            return {
+                miniLeft: false,
+            }
+        },
+        computed: {
+            ...mapState(['currentApplication']),
+            leftDrawer: {
+                get() {
+                    return this.$store.state.leftDrawer
+                },
+                set(value) {
+                    this.$store.dispatch("changeLeftDrawer", value)
+                }
+            },
+        },
+    }
+</script>

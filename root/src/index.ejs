@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-<!--    <link href="https://cdn.jsdelivr.net/npm/quasar@1.12.3/dist/quasar.min.css" rel="stylesheet" type="text/css">-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
+          type="text/css">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/quasar.min.css" rel="stylesheet" type="text/css">
 
     <title>Microportal</title>
     <!--
@@ -20,18 +20,10 @@
       This CSP allows any SSL-enabled host, but you should limit these directives further to increase your app's security.
       Learn more about CSP policies at https://content-security-policy.com/#directive
     -->
-<!--    <meta http-equiv="Content-Security-Policy"-->
-<!--          content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">-->
+    <!--    <meta http-equiv="Content-Security-Policy"-->
+    <!--          content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">-->
     <meta name="importmap-type" content="systemjs-importmap"/>
 
-    <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
-
-      1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
-      2. UMD - https://github.com/umdjs/umd
-      3. Global variable
-
-      More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
-    -->
     <script type="systemjs-importmap">
     {
       "imports": {
@@ -39,10 +31,12 @@
         "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
         "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.3.4/dist/vue-router.min.js",
         "vuex": "https://cdn.jsdelivr.net/npm/vuex@3.4.0/dist/vuex.min.js",
-        "quasar": "https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/quasar.common.min.js",
+        "quasar": "https://cdn.jsdelivr.net/npm/quasar@1.12.5/dist/quasar.umd.min.js",
         "single-spa-vue": "https://cdn.jsdelivr.net/npm/single-spa-vue@1.8.2/lib/single-spa-vue.min.js"
       }
     }
+
+
     </script>
 
     <!-- Add your organization's prod import map URL to this script's src  -->
@@ -61,12 +55,6 @@
         </script>
     <% } %>
 
-    <!--
-      If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
-      Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
-    -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.10.3/dist/zone.min.js"></script> -->
-
     <% if (isLocal) { %>
         <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.14.6/dist/import-map-overrides.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/system.js"></script>
@@ -81,6 +69,23 @@
 </head>
 <body>
 <main></main>
+<script>
+    window.quasarConfig = {
+        brand: {
+            primary: '#3eab93',
+            secondary: '#448e96',
+            accent: '#9e55ab',
+
+            dark: '#454545',
+
+            positive: '#36964d',
+            negative: '#ad0c1f',
+            info: '#30aac2',
+            warning: '#deb137'
+        },
+    }
+</script>
+
 <script>
     System.import('@microportal/root');
 </script>

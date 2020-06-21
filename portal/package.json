@@ -9,12 +9,15 @@
     "stats": "webpack --mode=production --profile --json > webpack-stats.json"
   },
   "dependencies": {
+    "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
+    "quasar": "^1.0.0",
     "single-spa-vue": "^1.8.2",
     "systemjs-webpack-interop": "^2.1.1",
     "vue": "^2.6.11",
     "vue-router": "^3.3.4",
-    "vuetify": "^2.3.0"
+    "vuetify": "^2.3.0",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.4.4",
@@ -22,12 +25,15 @@
     "@vue/cli-plugin-router": "^4.4.4",
     "@vue/cli-service": "^4.4.4",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-transform-imports": "1.5.0",
     "deepmerge": "^4.2.2",
     "eslint": "^7.2.0",
     "eslint-plugin-vue": "^6.2.2",
     "fibers": "^5.0.0",
+    "node-sass": "^4.13.0",
     "sass": "^1.26.8",
     "sass-loader": "^8.0.2",
+    "vue-cli-plugin-quasar": "~2.0.2",
     "vue-cli-plugin-single-spa": "^1.1.2",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.5.0",
