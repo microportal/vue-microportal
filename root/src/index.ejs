@@ -35,8 +35,6 @@
         "single-spa-vue": "https://cdn.jsdelivr.net/npm/single-spa-vue@1.8.2/lib/single-spa-vue.min.js"
       }
     }
-
-
     </script>
 
     <% if (isLocal) { %>
@@ -49,23 +47,17 @@
         "@microportal/settings": "https://localhost:7072/js/app.js"
       }
     }
+
         </script>
     <% } else { %>
         <!-- Add your organization's prod import map URL to this script's src  -->
-         <script type="systemjs-importmap" src="/importmap.json"></script>
+        <script type="systemjs-importmap" src="/importmap.json"></script>
     <% } %>
 
-    <% if (isLocal) { %>
-        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.14.6/dist/import-map-overrides.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/system.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/amd.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/named-exports.js"></script>
-    <% } else { %>
-        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.14.6/dist/import-map-overrides.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/system.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/amd.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/named-exports.min.js"></script>
-    <% } %>
+    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@1.14.6/dist/import-map-overrides.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.3.1/dist/extras/named-exports.js"></script>
 </head>
 <body>
 <main></main>

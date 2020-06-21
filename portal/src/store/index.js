@@ -13,7 +13,7 @@ const applications = [
             {
                 name: 'dashboard',
                 icon: 'fas fa-home',
-                to: '/dashboard',
+                to: '/dashboard/home',
             },
             {
                 name: 'about',

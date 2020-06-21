@@ -11,7 +11,6 @@
                 <router-view/>
             </q-page>
         </q-page-container>
-
         <Footer/>
     </q-layout>
 </template>
@@ -36,6 +35,9 @@
             return {
                 leftDrawerOpen: false
             }
+        },
+        beforeMount() {
+            this.$store.dispatch('selectApplication', this.$route.params.appId)
         },
     }
 </script>
