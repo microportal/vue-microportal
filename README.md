@@ -14,8 +14,7 @@ $ npm run serve
 If you prefer, use docker to start all the projects, run these commands:
 
 ```bash
-$ docker-compose build
-$ docker-compose up -d
+$ ./mp.sh start
 ```
 
 ___
