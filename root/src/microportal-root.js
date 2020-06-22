@@ -2,19 +2,19 @@ import {addErrorHandler, getAppStatus, registerApplication, start} from "single-
 
 registerApplication({
     name: '@microportal/portal',
-    app: () => import('@microportal/portal'),
+    app: () => System.import('@microportal/portal'),
     activeWhen: '/',
 });
 
 registerApplication({
     name: '@microportal/dashboard',
-    app: () => import('@microportal/dashboard'),
+    app: () => System.import('@microportal/dashboard'),
     activeWhen: '/dashboard',
 });
 
 registerApplication({
     name: '@microportal/settings',
-    app: () => import('@microportal/settings'),
+    app: () => System.import('@microportal/settings'),
     activeWhen: '/settings',
 });
 
