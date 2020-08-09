@@ -10,7 +10,7 @@ module.exports = (webpackConfigEnv) => {
         webpackConfigEnv,
     });
 
-    return webpackMerge.smart(defaultConfig, {
+    return webpackMerge.merge(defaultConfig, {
         // modify the webpack config however you'd like to by adding to this object
         entry: path.resolve(__dirname, "src/microportal-root"),
         output: {
