@@ -19,7 +19,7 @@ clean)
   ;;
 build)
   echo "Building images"
-  docker-compose build "${2}"
+  docker-compose -p ${STACK_NAME} build "${2}"
   ;;
 *)
   echo "Accepted commands: start, stop, restart, clean and build"

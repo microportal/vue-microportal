@@ -53,19 +53,26 @@ const store = new Vuex.Store({
     state: {
         appsDrawer: false,
         leftDrawer: true,
+        leftDrawerMini: true,
         rightDrawer: false,
         currentApplication: null,
         applications,
     },
     mutations: {
         changeAppsDrawer: (state, payload) => state.appsDrawer = payload,
-        changeLeftDrawer: (state, payload) => state.leftDrawer = payload,
+        changeLeftDrawer: (state, payload) => {state.leftDrawer = payload;state.leftDrawerMini= !state.leftDrawer || state.leftDrawer},
         changeRightDrawer: (state, payload) => state.rightDrawer = payload,
-        selectApplication: (state, payload) => state.currentApplication = payload,
+        selectApplication: (state, payload) => {
+            state.currentApplication = payload;
+            state.appsDrawer = false
+        },
     },
     actions: {
         changeAppsDrawer: ({commit}, payload) => commit("changeAppsDrawer", payload),
-        changeLeftDrawer: ({commit}, payload) => commit("changeLeftDrawer", payload),
+        changeLeftDrawer: ({commit}, payload) => {
+            console.log("changing left drawer")
+            commit("changeLeftDrawer", payload)
+        },
         changeRightDrawer: ({commit}, payload) => commit("changeRightDrawer", payload),
         selectApplication: ({commit}, payload) => {
             const app = applications.find(a => a.name === payload)

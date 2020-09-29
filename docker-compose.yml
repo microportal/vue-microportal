@@ -1,25 +1,25 @@
 version: '3'
 
 services:
-  portal:
+  portal-ui:
     build:
       context: ./portal
     networks:
       - mp
 
-  dashboard:
+  dashboard-ui:
     build:
       context: ./dashboard
     networks:
       - mp
 
-  settings:
+  settings-ui:
     build:
       context: ./settings
     networks:
       - mp
 
-  root:
+  root-ui:
     build:
       context: ./root
     networks:
@@ -28,10 +28,10 @@ services:
   proxy:
     image: nginx:stable-alpine
     depends_on:
-      - portal
-      - dashboard
-      - settings
-      - root
+      - portal-ui
+      - dashboard-ui
+      - settings-ui
+      - root-ui
     ports:
       - '80:80'
     volumes:
