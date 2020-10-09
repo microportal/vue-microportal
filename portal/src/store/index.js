@@ -1,6 +1,8 @@
 import Vue from "vue";
 import Vuex from 'vuex';
 
+import Router from '../router';
+
 Vue.use(Vuex);
 
 const applications = [
@@ -60,11 +62,15 @@ const store = new Vuex.Store({
     },
     mutations: {
         changeAppsDrawer: (state, payload) => state.appsDrawer = payload,
-        changeLeftDrawer: (state, payload) => {state.leftDrawer = payload;state.leftDrawerMini= !state.leftDrawer || state.leftDrawer},
+        changeLeftDrawer: (state, payload) => {
+            state.leftDrawer = payload;
+            state.leftDrawerMini = !state.leftDrawer || state.leftDrawer
+        },
         changeRightDrawer: (state, payload) => state.rightDrawer = payload,
-        selectApplication: (state, payload) => {
+        selectApplication: async (state, payload) => {
             state.currentApplication = payload;
-            state.appsDrawer = false
+            state.appsDrawer = false;
+            await Router.push(`/${payload.name}`);
         },
     },
     actions: {
