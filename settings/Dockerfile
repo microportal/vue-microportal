@@ -1,8 +1,9 @@
 # build
-FROM node:alpine as builder
+FROM node:14-alpine as builder
 COPY . /app
 WORKDIR /app
-RUN npm i \
+RUN alias python="python3" \
+    && npm i \
     && npm run build
 
 # dist
