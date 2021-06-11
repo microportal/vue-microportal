@@ -3,25 +3,25 @@ version: '3'
 services:
   portal-ui:
     build:
-      context: ./portal
+      context: ./packages/portal
     networks:
       - mp
 
   dashboard-ui:
     build:
-      context: ./dashboard
+      context: ./packages/dashboard
     networks:
       - mp
 
   settings-ui:
     build:
-      context: ./settings
+      context: ./packages/settings
     networks:
       - mp
 
   root-ui:
     build:
-      context: ./root
+      context: ./packages/root
     networks:
       - mp
 
@@ -35,7 +35,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/proxy/nginx.conf:/etc/nginx/nginx.conf
     networks:
       - mp
 

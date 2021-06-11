@@ -68,6 +68,7 @@ const store = new Vuex.Store({
         },
         changeRightDrawer: (state, payload) => state.rightDrawer = payload,
         selectApplication: async (state, payload) => {
+            if (!payload) return;
             state.currentApplication = payload;
             state.appsDrawer = false;
             await Router.push(`/${payload.name}`);
