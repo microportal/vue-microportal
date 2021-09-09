@@ -20,7 +20,8 @@ $ make run
 If you prefer, use docker to start all the projects, run these commands:
 
 ```bash
-$ make start
+$ make docker-build
+$ make docker-start
 ```
 
 ___

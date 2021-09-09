@@ -7,7 +7,7 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/dashboard/home',
+        path: '/dashboard',
         name: 'dashboard-home',
         component: Home,
     },
